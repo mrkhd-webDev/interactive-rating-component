@@ -1,0 +1,285 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass&display=swap");
+
+$orange: hsl(25, 97%, 53%);
+$white: hsl(0, 0%, 100%);
+$light-grey: hsl(217, 12%, 63%);
+$medium-grey: hsl(216, 12%, 54%);
+$dark-blue: hsl(213, 19%, 18%);
+$very-dark-blue: hsl(216, 12%, 8%);
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Overpass", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  background: $very-dark-blue;
+  color: $white;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+.display-none {
+  display: none !important;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background: $dark-blue;
+  padding: 30px;
+  border-radius: 30px;
+  max-width: 400px;
+
+  .card-star {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 50px;
+    min-height: 50px;
+
+    background: rgba(124, 135, 152, 0.1);
+    border-radius: 50px;
+    margin-bottom: 30px;
+
+    img {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .card-header {
+    margin-bottom: 10px;
+    h1 {
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 35px;
+
+      color: #ffffff;
+    }
+  }
+
+  .card-info {
+    margin-bottom: 30px;
+    p {
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 150%;
+
+      color: #959eac;
+    }
+  }
+
+  .card-rating {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 350px;
+
+    .rating {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 50px;
+      min-height: 50px;
+
+      background: rgba(124, 135, 152, 0.1);
+      border-radius: 50px;
+      margin-bottom: 30px;
+    }
+
+    .checked {
+      background: $light-grey;
+      color: $white;
+    }
+
+    label {
+      font-weight: 700;
+      font-size: 17px;
+      line-height: 150%;
+
+      color: #7c8798;
+    }
+
+    input {
+      display: none;
+    }
+
+    .rating:hover {
+      background: $orange;
+      color: $white;
+      cursor: pointer;
+    }
+  }
+
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 350px;
+    background: #fb7413;
+    border-radius: 35px;
+    padding: 10px 0;
+  }
+
+  button {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 150%;
+    letter-spacing: 0.14em;
+    border: none;
+
+    color: #ffffff;
+  }
+
+  .btn:hover {
+    background: $white;
+    cursor: pointer;
+    color: $orange;
+  }
+}
+
+.card-thanks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: $dark-blue;
+  padding: 30px;
+  border-radius: 30px;
+  max-width: 400px;
+
+  .image {
+    margin-top: 10px;
+    margin-bottom: 35px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .rating-received {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(217, 217, 217, 0.1);
+    border-radius: 30px;
+    min-width: 195px;
+    padding: 10px;
+    margin-bottom: 35px;
+
+    p {
+      font-weight: 400;
+      font-size: 15px;
+      letter-spacing: 0.005em;
+
+      color: #fb7413;
+    }
+  }
+
+  .greetings {
+    text-align: center;
+    margin-bottom: 10px;
+
+    h1 {
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 35px;
+
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 150%;
+      letter-spacing: 0.005em;
+
+      color: #959eac;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .card {
+    max-width: 325px;
+    border-radius: 15px;
+    padding: 24px;
+
+    .card-star {
+      min-width: 40px;
+      min-height: 40px;
+    }
+
+    .card-header {
+      h1 {
+        font-size: 24px;
+      }
+    }
+
+    .card-info {
+      p {
+        font-size: 14px;
+      }
+    }
+
+    form {
+      max-width: 277px;
+      .card-rating {
+        min-width: 277px;
+        .rating {
+          min-width: 40px;
+          min-height: 40px;
+        }
+      }
+    }
+
+    .btn {
+      min-width: 277px;
+    }
+
+    button {
+      font-size: 14px;
+    }
+  }
+
+  .card-thanks {
+    min-width: 325px;
+    border-radius: 15px;
+    padding: 24px;
+
+    .rating-received {
+      p {
+        font-size: 14px;
+      }
+    }
+
+    .greetings {
+      h1 {
+        font-size: 24px;
+        line-height: 30px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+}
